@@ -5,9 +5,9 @@ import App from '@app';
 import { MODELS } from '@common/constants';
 import toJSON from '@utils/toJSON.plugin';
 
-export class IStatistic {
+export class IStatisticPostCovid {
   @IsNumber()
-  goldVariance: number;
+  tltVariance: number;
 
   @IsNumber()
   spyVariance: number;
@@ -43,12 +43,6 @@ export class IStatistic {
   strategyPerformance: number;
 
   @IsNumber()
-  finalAmount: number;
-
-  @IsNumber()
-  initialAmount: number;
-
-  @IsNumber()
   informationRatio: number;
 
   @IsNumber()
@@ -61,10 +55,10 @@ export class IStatistic {
   cagr: number;
 }
 
-export interface IStatisticSchema extends Document, IStatistic {}
-const statisticSchema: Schema = new Schema(
+export interface IStatisticPostCovidSchema extends Document, IStatisticPostCovid {}
+const statisticPostCovidSchema: Schema = new Schema(
   {
-    goldVariance: {
+    tltVariance: {
       type: Number,
       required: true,
     },
@@ -112,14 +106,6 @@ const statisticSchema: Schema = new Schema(
       type: Number,
       required: true,
     },
-    finalAmount: {
-      type: Number,
-      required: true,
-    },
-    initialAmount: {
-      type: Number,
-      required: true,
-    },
     informationRatio: {
       type: Number,
       required: true,
@@ -137,9 +123,9 @@ const statisticSchema: Schema = new Schema(
       required: true,
     },
   },
-  { collection: 'statistical_data' },
+  { collection: 'statistical_post_covid' },
 );
 
-statisticSchema.plugin(toJSON);
+statisticPostCovidSchema.plugin(toJSON);
 
-export default App.getGldSpyDbConnection.model<IStatisticSchema>(MODELS.STATISTIC, statisticSchema);
+export default App.getTltSpyDbConnection.model<IStatisticPostCovidSchema>(MODELS.STATISTIC_POST_COVID, statisticPostCovidSchema);

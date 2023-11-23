@@ -16,6 +16,7 @@ export const PORT: number = parseInt(checkEnv('PORT'), 10);
 export const MONGO_URI: string = checkEnv('MONGO_URI');
 export const DATABASE_GLD_SPY: string = checkEnv('DATABASE_GLD_SPY');
 export const DATABASE_XLE_TAN: string = checkEnv('DATABASE_XLE_TAN');
+export const DATABASE_TLT_SPY: string = checkEnv('DATABASE_TLT_SPY');
 export const CORS_ORIGINS = JSON.parse(checkEnv('CORS_ORIGINS'));
 export const CREDENTIALS = checkEnv('CREDENTIALS') === 'true';
 

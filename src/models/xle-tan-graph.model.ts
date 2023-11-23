@@ -1,5 +1,5 @@
-import { IsEmail, IsString } from 'class-validator';
-import mongoose, { Document, Schema } from 'mongoose';
+import { IsString } from 'class-validator';
+import { Document, Schema } from 'mongoose';
 
 import App from '@app';
 import { MODELS } from '@common/constants';
@@ -9,7 +9,7 @@ export class IXleGraph {
   @IsString()
   Year: string;
 
-  @IsEmail()
+  @IsString()
   Month_Number: string;
 
   @IsString()
