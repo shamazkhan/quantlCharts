@@ -1,6 +1,6 @@
 // eslint-disable-next-line simple-import-sort/imports
 import 'reflect-metadata';
-import { CORS_ORIGINS, CREDENTIALS, MONGO_URI, DATABASE_XLE_TAN, DATABASE_GLD_SPY, isProduction, PORT, SENTRY_DSN } from '@config';
+import { CORS_ORIGINS, CREDENTIALS, MONGO_URI, DATABASE_XLE_TAN, DATABASE_GLD_SPY, isProduction, PORT, SENTRY_DSN, DATABASE_TLT_SPY } from '@config';
 
 import * as Sentry from '@sentry/node';
 import bodyParser from 'body-parser';
@@ -26,6 +26,7 @@ export default class App {
   private readonly controllers: Function[] = [];
   public static gldSpyDb: Connection;
   public static xleTanDb: Connection;
+  public static tltSpyDb: Connection;
 
   constructor(controllers: Function[]) {
     this.app = express();
@@ -90,6 +91,15 @@ export default class App {
       return this.xleTanDb;
     }
   }
+  
+  public static get getTltSpyDbConnection() {
+    if (this.tltSpyDb) {
+      return this.tltSpyDb;
+    } else {
+      this.connectDBs();
+      return this.tltSpyDb;
+    }
+  }
   private initHandlingErrors() {
     if (isProduction) {
       // The error handler must be before any other error middleware and after all controllers
@@ -102,6 +112,7 @@ export default class App {
     try {
       this.gldSpyDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_GLD_SPY}`);
       this.xleTanDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_XLE_TAN}`);
+      this.tltSpyDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_TLT_SPY}`);
     } catch (error) {
       console.error(`Error:${error.message}`);
       process.exit(1);

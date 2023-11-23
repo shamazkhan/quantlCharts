@@ -1,5 +1,5 @@
-import { IsEmail, IsNumber, IsString } from 'class-validator';
-import mongoose, { Document, Schema } from 'mongoose';
+import { IsNumber } from 'class-validator';
+import { Document, Schema } from 'mongoose';
 
 import App from '@app';
 import { MODELS } from '@common/constants';

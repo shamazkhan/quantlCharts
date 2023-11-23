@@ -4,7 +4,16 @@ import { getMetadataArgsStorage } from 'routing-controllers';
 import { routingControllersToSpec } from 'routing-controllers-openapi';
 import swaggerUi from 'swagger-ui-express';
 
-import { GldSpyGraphControllerV1, GldSpyStatisticControllerV1, XleTanGraphControllerV1, XleTanStatisticControllerV1 } from '@v1/index';
+import {
+  GldSpyGraphControllerV1,
+  GldSpyStatisticControllerV1,
+  XleTanGraphControllerV1,
+  XleTanStatisticControllerV1,
+  TltSpyGraphPostCovidControllerV1,
+  TltSpyGraphPreCovidControllerV1,
+  TltSpyStatisticPreCovidControllerV1,
+  TltSpyStatisticPostCovidControllerV1,
+} from '@v1/index';
 
 import App from './app';
 
@@ -36,7 +45,16 @@ function initSwagger(server: App) {
   server.getServer().use('/api-docs', swaggerUi.serve, swaggerUi.setup(spec));
 }
 
-const server = new App([GldSpyGraphControllerV1, GldSpyStatisticControllerV1, XleTanGraphControllerV1, XleTanStatisticControllerV1]);
+const server = new App([
+  GldSpyGraphControllerV1,
+  GldSpyStatisticControllerV1,
+  XleTanGraphControllerV1,
+  XleTanStatisticControllerV1,
+  TltSpyGraphPostCovidControllerV1,
+  TltSpyGraphPreCovidControllerV1,
+  TltSpyStatisticPreCovidControllerV1,
+  TltSpyStatisticPostCovidControllerV1,
+]);
 initSwagger(server);
 
 (async () => {

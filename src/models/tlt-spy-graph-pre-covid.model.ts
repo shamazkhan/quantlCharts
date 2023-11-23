@@ -5,7 +5,7 @@ import App from '@app';
 import { MODELS } from '@common/constants';
 import toJSON from '@utils/toJSON.plugin';
 
-export class IGraph {
+export class IGraphPreCovid {
   @IsString()
   Year: string;
 
@@ -13,7 +13,7 @@ export class IGraph {
   Month_Number: string;
 
   @IsString()
-  gld_return: string;
+  tlt_return: string;
 
   @IsString()
   spy_return: string;
@@ -22,7 +22,7 @@ export class IGraph {
   date: string;
 
   @IsString()
-  gld_creturn: string;
+  tlt_creturn: string;
 
   @IsString()
   spy_creturn: string;
@@ -31,10 +31,10 @@ export class IGraph {
   creturn: string;
 
   @IsString()
-  portfolio25: string;
+  portfolio30: string;
 
   @IsString()
-  portfolio75: string;
+  portfolio70: string;
 
   @IsString()
   rolling_beta_gs: string;
@@ -49,8 +49,8 @@ export class IGraph {
   drawdown: string;
 }
 
-export interface IGraphSchema extends Document, IGraph {}
-const graphSchema: Schema = new Schema(
+export interface IGraphPreCovidSchema extends Document, IGraphPreCovid {}
+const graphPreCovidSchema: Schema = new Schema(
   {
     Year: {
       type: String,
@@ -60,7 +60,7 @@ const graphSchema: Schema = new Schema(
       type: String,
       required: true,
     },
-    gld_return: {
+    tlt_return: {
       type: String,
       required: true,
     },
@@ -72,7 +72,7 @@ const graphSchema: Schema = new Schema(
       type: String,
       required: true,
     },
-    gld_creturn: {
+    tlt_creturn: {
       type: String,
       required: true,
     },
@@ -84,11 +84,11 @@ const graphSchema: Schema = new Schema(
       type: String,
       required: true,
     },
-    portfolio25: {
+    portfolio30: {
       type: String,
       required: true,
     },
-    portfolio75: {
+    portfolio70: {
       type: String,
       required: true,
     },
@@ -109,8 +109,8 @@ const graphSchema: Schema = new Schema(
       required: true,
     },
   },
-  { collection: 'graphical_data' },
+  { collection: 'graphical_pre_covid' },
 );
 
-graphSchema.plugin(toJSON);
-export default App.getGldSpyDbConnection.model<IGraphSchema>(MODELS.GRAPH, graphSchema);
+graphPreCovidSchema.plugin(toJSON);
+export default App.getTltSpyDbConnection.model<IGraphPreCovidSchema>(MODELS.GRAPH_PRE_COVID, graphPreCovidSchema);
