@@ -5,4 +5,8 @@ export enum MODELS {
   STATISTIC_POST_COVID = 'statistical-post-covid',
   STATISTIC_PRE_COVID = 'statistical-pre-covid',
   STATISTIC = 'statistical-data',
+  RESULTS = 'results-data',
+  RANGE = 'range-data',
+  SELECTED = 'selected-data',
+  SORTINO = 'sortino-data',
 }

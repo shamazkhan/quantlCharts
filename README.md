@@ -83,7 +83,7 @@ express-typescript-boilerplate
 │  ├─ api
 │  │  └─ v1
 │  │     ├─ auth
-│  │     │  ├─ xleTanStatistic.controller.ts
+│  │     │  ├─ renewablesSelected.controller.ts
 │  │     │  └─ dtos
 │  │     ├─ index.ts
 │  │     └─ user

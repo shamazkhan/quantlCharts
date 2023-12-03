@@ -1,6 +1,19 @@
 // eslint-disable-next-line simple-import-sort/imports
 import 'reflect-metadata';
-import { CORS_ORIGINS, CREDENTIALS, MONGO_URI, DATABASE_XLE_TAN, DATABASE_GLD_SPY, isProduction, PORT, SENTRY_DSN, DATABASE_TLT_SPY } from '@config';
+import {
+  CORS_ORIGINS,
+  CREDENTIALS,
+  MONGO_URI,
+  DATABASE_XLE_TAN,
+  DATABASE_GLD_SPY,
+  isProduction,
+  PORT,
+  SENTRY_DSN,
+  DATABASE_TLT_SPY,
+  DATABASE_SOXX,
+  DATABASE_CrudeWTI,
+  DATABASE_Renewables,
+} from '@config';
 
 import * as Sentry from '@sentry/node';
 import bodyParser from 'body-parser';
@@ -27,6 +40,9 @@ export default class App {
   public static gldSpyDb: Connection;
   public static xleTanDb: Connection;
   public static tltSpyDb: Connection;
+  public static soxxDb: Connection;
+  public static crudeWtiDb: Connection;
+  public static renewablesDb: Connection;
 
   constructor(controllers: Function[]) {
     this.app = express();
@@ -91,7 +107,7 @@ export default class App {
       return this.xleTanDb;
     }
   }
-  
+
   public static get getTltSpyDbConnection() {
     if (this.tltSpyDb) {
       return this.tltSpyDb;
@@ -100,6 +116,34 @@ export default class App {
       return this.tltSpyDb;
     }
   }
+
+  public static get getSoxxDbConnection() {
+    if (this.soxxDb) {
+      return this.soxxDb;
+    } else {
+      this.connectDBs();
+      return this.soxxDb;
+    }
+  }
+
+  public static get getCrudeWtiDbConnection() {
+    if (this.crudeWtiDb) {
+      return this.crudeWtiDb;
+    } else {
+      this.connectDBs();
+      return this.crudeWtiDb;
+    }
+  }
+
+  public static get getRenewablesDbConnection() {
+    if (this.renewablesDb) {
+      return this.renewablesDb;
+    } else {
+      this.connectDBs();
+      return this.renewablesDb;
+    }
+  }
+
   private initHandlingErrors() {
     if (isProduction) {
       // The error handler must be before any other error middleware and after all controllers
@@ -113,6 +157,9 @@ export default class App {
       this.gldSpyDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_GLD_SPY}`);
       this.xleTanDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_XLE_TAN}`);
       this.tltSpyDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_TLT_SPY}`);
+      this.soxxDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_SOXX}`);
+      this.crudeWtiDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_CrudeWTI}`);
+      this.renewablesDb = mongoose.createConnection(`${MONGO_URI}/${DATABASE_Renewables}`);
     } catch (error) {
       console.error(`Error:${error.message}`);
       process.exit(1);
