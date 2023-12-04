@@ -17,6 +17,9 @@ export const MONGO_URI: string = checkEnv('MONGO_URI');
 export const DATABASE_GLD_SPY: string = checkEnv('DATABASE_GLD_SPY');
 export const DATABASE_XLE_TAN: string = checkEnv('DATABASE_XLE_TAN');
 export const DATABASE_TLT_SPY: string = checkEnv('DATABASE_TLT_SPY');
+export const DATABASE_SOXX: string = checkEnv('DATABASE_SOXX');
+export const DATABASE_CrudeWTI: string = checkEnv('DATABASE_CrudeWTI');
+export const DATABASE_Renewables: string = checkEnv('DATABASE_Renewables');
 export const CORS_ORIGINS = JSON.parse(checkEnv('CORS_ORIGINS'));
 export const CREDENTIALS = checkEnv('CREDENTIALS') === 'true';
 

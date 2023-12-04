@@ -5,14 +5,22 @@ import { routingControllersToSpec } from 'routing-controllers-openapi';
 import swaggerUi from 'swagger-ui-express';
 
 import {
+  CrudeWtiRangeControllerV1,
+  CrudeWtiResultsControllerV1,
+  CrudeWtiStatisticControllerV1,
   GldSpyGraphControllerV1,
   GldSpyStatisticControllerV1,
-  XleTanGraphControllerV1,
-  XleTanStatisticControllerV1,
+  SoxxGraphControllerV1,
+  SoxxStatisticControllerV1,
   TltSpyGraphPostCovidControllerV1,
   TltSpyGraphPreCovidControllerV1,
-  TltSpyStatisticPreCovidControllerV1,
   TltSpyStatisticPostCovidControllerV1,
+  TltSpyStatisticPreCovidControllerV1,
+  XleTanGraphControllerV1,
+  XleTanStatisticControllerV1,
+  RenewablesSelectedControllerV1,
+  RenewablesSortinoControllerV1,
+  RenewablesStatisticControllerV1,
 } from '@v1/index';
 
 import App from './app';
@@ -54,6 +62,14 @@ const server = new App([
   TltSpyGraphPreCovidControllerV1,
   TltSpyStatisticPreCovidControllerV1,
   TltSpyStatisticPostCovidControllerV1,
+  SoxxGraphControllerV1,
+  SoxxStatisticControllerV1,
+  CrudeWtiResultsControllerV1,
+  CrudeWtiRangeControllerV1,
+  CrudeWtiStatisticControllerV1,
+  RenewablesStatisticControllerV1,
+  RenewablesSortinoControllerV1,
+  RenewablesSelectedControllerV1,
 ]);
 initSwagger(server);
 
