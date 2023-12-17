@@ -10,7 +10,8 @@ RUN npm install
 RUN npm install -g yarn
 
 
-EXPOSE 3001
+# EXPOSE 3001
+EXPOSE 21600
 
 # dev
 FROM build-stage as dev-build-stage
