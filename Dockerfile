@@ -7,7 +7,7 @@ WORKDIR /app
 
 RUN npm install --force
 
-RUN npm install -g yarn
+#RUN npm install -g yarn
 
 
 # EXPOSE 3001
