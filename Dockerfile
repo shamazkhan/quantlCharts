@@ -5,8 +5,7 @@ COPY . ./app
 
 WORKDIR /app
 
-RUN npm install --force
-
+RUN npm install --legacy-peer-deps
 #RUN npm install -g yarn
 
 
