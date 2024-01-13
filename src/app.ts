@@ -1,5 +1,7 @@
 // eslint-disable-next-line simple-import-sort/imports
 import 'reflect-metadata';
+import * as dotenv from "dotenv"
+dotenv.config();
 import {
   CORS_ORIGINS,
   CREDENTIALS,
@@ -18,6 +20,7 @@ import {
 import * as Sentry from '@sentry/node';
 import bodyParser from 'body-parser';
 
+
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import express, { Application, ErrorRequestHandler, RequestHandler } from 'express';
@@ -32,6 +35,9 @@ import xss from 'xss-clean';
 import handlingErrorsMiddleware from './middlewares/handlingErrors.middleware';
 
 let serverConnection: http.Server;
+export const typeOrmConfig: TypeOrmModuleOptions = {
+    port: process.env.PORT
+}
 
 export default class App {
   private readonly app: Application;
