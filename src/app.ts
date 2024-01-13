@@ -7,6 +7,7 @@ import {
   DATABASE_XLE_TAN,
   DATABASE_GLD_SPY,
   isProduction,
+  PORT,
   SENTRY_DSN,
   DATABASE_TLT_SPY,
   DATABASE_SOXX,
