@@ -48,6 +48,7 @@ export default class App {
 
   constructor(controllers: Function[]) {
     dotenv.config();
+    process.env.production.PORT;
     this.app = express();
     this.port = PORT || 8080;
     this.controllers = controllers;
@@ -181,7 +182,7 @@ export default class App {
 
   public initWebServer = async () => {
     return new Promise(resolve => {
-      dotenv.config().port
+      dotenv.config();
       serverConnection = this.app.listen(this.port, () => {
         console.log(`✅  Ready on port http://localhost:${this.port}`);
 
