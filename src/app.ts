@@ -1,7 +1,5 @@
 // eslint-disable-next-line simple-import-sort/imports
 import 'reflect-metadata';
-import * as dotenv from 'dotenv';
-dotenv.config();
 import {
   CORS_ORIGINS,
   CREDENTIALS,
@@ -47,10 +45,8 @@ export default class App {
   public static renewablesDb: Connection;
 
   constructor(controllers: Function[]) {
-    dotenv.config();
-    process.env.production.PORT;
     this.app = express();
-    this.port = PORT || 8080;
+    this.port = PORT || 3000;
     this.controllers = controllers;
 
     this.initSentry();
@@ -182,7 +178,6 @@ export default class App {
 
   public initWebServer = async () => {
     return new Promise(resolve => {
-      dotenv.config();
       serverConnection = this.app.listen(this.port, () => {
         console.log(`✅  Ready on port http://localhost:${this.port}`);
 
