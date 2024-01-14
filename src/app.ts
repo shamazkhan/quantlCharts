@@ -1,5 +1,7 @@
 // eslint-disable-next-line simple-import-sort/imports
 import 'reflect-metadata';
+import * as dotenv from 'dotenv';
+dotenv.config();
 import {
   CORS_ORIGINS,
   CREDENTIALS,
@@ -45,6 +47,7 @@ export default class App {
   public static renewablesDb: Connection;
 
   constructor(controllers: Function[]) {
+    dotenv.config();
     this.app = express();
     this.port = PORT || 8080;
     this.controllers = controllers;
