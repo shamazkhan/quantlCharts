@@ -10,7 +10,7 @@ RUN npm install --legacy-peer-deps
 
 
 # EXPOSE 3001
-EXPOSE 21600
+#EXPOSE 21600
 
 # dev
 FROM build-stage as dev-build-stage
