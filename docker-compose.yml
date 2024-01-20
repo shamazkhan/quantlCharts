@@ -21,7 +21,7 @@ services:
     container_name: database
     image: mongo:5.0
     ports:
-      - 27017:27017
+      - 3000:3000
     volumes:
       - ~/apps/mongo:/data/db
     networks:
