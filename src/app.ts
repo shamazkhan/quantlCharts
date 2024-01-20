@@ -46,7 +46,8 @@ export default class App {
 
   constructor(controllers: Function[]) {
     this.app = express();
-    this.port = PORT || 8000;
+    //this.port = PORT || 8000;
+    this.port = 8000;
     this.controllers = controllers;
 
     this.initSentry();
