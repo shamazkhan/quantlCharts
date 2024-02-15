@@ -1,0 +1,16 @@
+export { CrudeWtiRangeController as CrudeWtiRangeControllerV1 } from '@v1/crudeWtiRange/crudeWtiRange.controller';
+export { CrudeWtiResultsController as CrudeWtiResultsControllerV1 } from '@v1/crudeWtiResults/crudeWtiResults.controller';
+export { CrudeWtiStatisticController as CrudeWtiStatisticControllerV1 } from '@v1/crudeWtiStatistic/crudeWtiStatistic.controller';
+export { GldSpyGraphController as GldSpyGraphControllerV1 } from '@v1/gldSpyGraph/gldSpyGraph.controller';
+export { GldSpyStatisticController as GldSpyStatisticControllerV1 } from '@v1/gldSpyStatistic/gldSpyStatistic.controller';
+export { RenewablesSelectedController as RenewablesSelectedControllerV1 } from '@v1/renewablesSelected/renewablesSelected.controller';
+export { RenewablesSortinoController as RenewablesSortinoControllerV1 } from '@v1/renewablesSortino/renewablesSortino.controller';
+export { RenewablesStatisticController as RenewablesStatisticControllerV1 } from '@v1/renewablesStatistic/renewablesStatistic.controller';
+export { SoxxGraphController as SoxxGraphControllerV1 } from '@v1/soxxGraph/soxxGraph.controller';
+export { SoxxStatisticController as SoxxStatisticControllerV1 } from '@v1/soxxStatistic/soxxStatistic.controller';
+export { TltSpyGraphPostCovidController as TltSpyGraphPostCovidControllerV1 } from '@v1/tltSpyGraphPostCovid/tltSpyGraphPostCovid.controller';
+export { TltSpyGraphPreCovidController as TltSpyGraphPreCovidControllerV1 } from '@v1/tltSpyGraphPreCovid/tltSpyGraphPreCovid.controller';
+export { TltSpyStatisticPostCovidController as TltSpyStatisticPostCovidControllerV1 } from '@v1/tltSpyStatisticPostCovid/tltSpyStatisticPostCovid.controller';
+export { TltSpyStatisticPreCovidController as TltSpyStatisticPreCovidControllerV1 } from '@v1/tltSpyStatisticPreCovid/tltSpyStatisticPreCovid.controller';
+export { XleTanGraphController as XleTanGraphControllerV1 } from '@v1/xleTanGraph/xleTanGraph.controller';
+export { XleTanStatisticController as XleTanStatisticControllerV1 } from '@v1/xleTanStatistic/xleTanStatistic.controller';
