@@ -5,7 +5,7 @@ COPY . ./app
 
 
 
-RUN npm i --force
+#RUN npm i --force
 #RUN npm install -g yarn
 
 
