@@ -18,7 +18,7 @@ module.exports = {
     production: {
       user: 'SSH_USERNAME',
       host: '127.0.0.1',
-      ref: 'origin/main',
+      ref: 'origin/masters',
       repo: 'GIT_REPOSITORY',
       path: 'DESTINATION_PATH',
       'pre-deploy-local': '',
