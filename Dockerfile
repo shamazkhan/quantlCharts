@@ -2,7 +2,7 @@
 FROM node:16 as build-stage
 WORKDIR /app
 COPY . ./app
-
+RUN yarn install
 
 
 #RUN npm i --force
