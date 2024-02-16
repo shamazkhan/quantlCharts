@@ -4,15 +4,17 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
 const checkEnv = (envVar: string, defaultValue?: string) => {
   if (!process.env[envVar]) {
     if (defaultValue) {
+      console.log("NO PORT SO DEFAULT IS " + defaultValue)
       return defaultValue;
     }
     throw new Error(`Please define the Enviroment variable"${envVar}"`);
   } else {
+    console.log("PORT IS " + process.env[envVar])
     return process.env[envVar] as string;
   }
 };
 
-export const PORT: number = parseInt(checkEnv('PORT'), 10);
+export const PORT: number = 3000;
 export const MONGO_URI: string = checkEnv('MONGO_URI');
 export const DATABASE_GLD_SPY: string = checkEnv('DATABASE_GLD_SPY');
 export const DATABASE_XLE_TAN: string = checkEnv('DATABASE_XLE_TAN');

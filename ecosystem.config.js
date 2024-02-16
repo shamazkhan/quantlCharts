@@ -8,7 +8,7 @@ module.exports = {
       max_memory_restart: '1G',
       merge_logs: true,
       env: {
-        PORT: 8000,
+        PORT: 3000,
         NODE_ENV: 'production',
       },
     },
@@ -17,8 +17,8 @@ module.exports = {
   deploy: {
     production: {
       user: 'SSH_USERNAME',
-      host: '127.0.0.1',
-      ref: 'origin/master',
+      host: '0.0.0.0',
+      ref: 'origin/masters',
       repo: 'GIT_REPOSITORY',
       path: 'DESTINATION_PATH',
       'pre-deploy-local': '',

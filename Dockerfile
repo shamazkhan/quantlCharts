@@ -1,11 +1,11 @@
 # build stage
-FROM node:16.14.0-alpine as build-stage
+FROM node:16 as build-stage
 
 COPY . ./app
 
 WORKDIR /app
 
-RUN npm install --legacy-peer-deps
+RUN npm i --force
 #RUN npm install -g yarn
 
 
