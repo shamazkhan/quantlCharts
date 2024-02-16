@@ -1,9 +1,10 @@
 # build stage
 FROM node:16 as build-stage
 WORKDIR /app
-COPY . ./app
-RUN yarn install
+COPY package.json ./
 
+RUN yarn install
+COPY . ./app
 
 #RUN npm i --force
 #RUN npm install -g yarn
