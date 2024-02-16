@@ -5,7 +5,7 @@ COPY . ./app
 
 
 
-RUN npm i --force
+#RUN npm i --force
 #RUN npm install -g yarn
 
 
@@ -21,4 +21,4 @@ FROM build-stage as prod-build-stage
 
 ENV NODE_ENV production
 
-CMD ["run", "start"]
+CMD ["yarn", "start"]
