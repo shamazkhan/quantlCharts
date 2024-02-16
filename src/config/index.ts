@@ -4,10 +4,12 @@ dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
 const checkEnv = (envVar: string, defaultValue?: string) => {
   if (!process.env[envVar]) {
     if (defaultValue) {
+      console.log("NO PORT SO DEFAULT IS " + defaultValue)
       return defaultValue;
     }
     throw new Error(`Please define the Enviroment variable"${envVar}"`);
   } else {
+    console.log("PORT IS " + process.env[envVar])
     return process.env[envVar] as string;
   }
 };
