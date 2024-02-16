@@ -8,7 +8,7 @@ module.exports = {
       max_memory_restart: '1G',
       merge_logs: true,
       env: {
-        PORT: 3000,
+        PORT: process.env.PORT,
         NODE_ENV: 'production',
       },
     },
