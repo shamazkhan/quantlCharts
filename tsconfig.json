@@ -17,7 +17,7 @@
       "@middlewares/*": ["./src/middlewares/*"],
       "@models/*": ["./src/models/*"],
       "@common/*": ["./src/common/*"],
-      "@exceptions/*": [".src/exceptions/*"],
+      "@exceptions/*": ["./src/exceptions/*"],
       "@v1/*": ["./src/api/v1/*"],
       "@utils/*": ["./src/utils/*"],
       "@services/*": ["./src/services/*"],
