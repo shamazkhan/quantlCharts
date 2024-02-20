@@ -10,18 +10,18 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": "src",
+    "baseUrl": "./src/",
     "paths": {
       "@app": ["app"],
-      "@config": ["./src/config"],
-      "@middlewares/*": ["./src/middlewares/*"],
-      "@models/*": ["./src/models/*"],
-      "@common/*": ["./src/common/*"],
-      "@exceptions/*": ["./src/exceptions/*"],
-      "@v1/*": ["./src/api/v1/*"],
-      "@utils/*": ["./src/utils/*"],
-      "@services/*": ["./src/services/*"],
-      "@__tests__/*": ["./src/__tests__/*"]
+      "@config": ["config"],
+      "@middlewares/*": ["middlewares/*"],
+      "@models/*": ["models/*"],
+      "@common/*": ["common/*"],
+      "@exceptions/*": ["exceptions/*"],
+      "@v1/*": ["api/v1/*"],
+      "@utils/*": ["utils/*"],
+      "@services/*": ["services/*"],
+      "@__tests__/*": ["__tests__/*"]
     }
   }
 }
