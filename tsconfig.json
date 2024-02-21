@@ -12,16 +12,16 @@
     "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
-      "@app/*": ["src/app"],
-      "@config/*": ["src/config/*"],
-      "@middlewares/*": ["src/middlewares/*"],
-      "@models/*": ["src/models/*"],
-      "@common/*": ["src/common/*"],
-      "@exceptions/*": ["src/exceptions/*"],
-      "@v1/*": ["src/api/v1/*"],
-      "@utils/*": ["src/utils/*"],
-      "@services/*": ["src/services/*"],
-      "@__tests__/*": ["src/__tests__/*"]
+      "@app/*": ["./src/app"],
+      "@config/*": ["./src/config/*"],
+      "@middlewares/*": ["./src/middlewares/*"],
+      "@models/*": ["./src/models/*"],
+      "@common/*": ["./src/common/*"],
+      "@exceptions/*": ["./src/exceptions/*"],
+      "@v1/*": ["./src/api/v1/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@services/*": ["./src/services/*"],
+      "@__tests__/*": ["./src/__tests__/*"]
     }
   }
 }
