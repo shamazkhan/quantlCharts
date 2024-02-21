@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
-//dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
-dotenv.config({ path: `.env.production.local` });
+dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
+//dotenv.config({ path: `.env.production.local` });
 
 const checkEnv = (envVar: string, defaultValue?: string) => {
   if (!process.env[envVar]) {
