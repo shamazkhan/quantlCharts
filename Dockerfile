@@ -5,7 +5,7 @@ COPY package.json ./
 COPY tsconfig.json ./
 
 RUN yarn install
-COPY . ./app
+COPY . .
 
 #RUN npm i --force
 #RUN npm install -g yarn
