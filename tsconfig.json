@@ -15,7 +15,7 @@
       "@app": ["src"],
       "@config": ["config"],
       "@middlewares/*": ["middlewares/*"],
-      "@models/*": ["models/*"],
+      "@models/*": ["./models/*"],
       "@common/*": ["common/*"],
       "@exceptions/*": ["exceptions/*"],
       "@v1/*": ["api/v1/*"],
