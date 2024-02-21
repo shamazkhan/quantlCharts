@@ -15,7 +15,7 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
   }
 };
 
-export const PORT: number = 3000;
+export const PORT: number = parseInt(checkEnv('PORT'));
 export const MONGO_URI: string = checkEnv('MONGO_URI');
 export const DATABASE_GLD_SPY: string = checkEnv('DATABASE_GLD_SPY');
 export const DATABASE_XLE_TAN: string = checkEnv('DATABASE_XLE_TAN');
