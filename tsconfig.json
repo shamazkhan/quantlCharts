@@ -12,16 +12,16 @@
     "experimentalDecorators": true,
     "baseUrl": "./src/", // Updated base URL to include the leading dot and slash
     "paths": {
-      "@app/": ["app/*"], // Added '*' to match all subdirectories and files
-      "@config/": ["config/*"],
-      "@middlewares/": ["middlewares/*"],
-      "@models/": ["models/*"],
-      "@common/": ["common/*"],
-      "@exceptions/": ["exceptions/*"],
-      "@v1/": ["api/v1/*"],
-      "@utils/": ["utils/*"],
-      "@services/": ["services/*"],
-      "@__tests__/": ["__tests__/*"]
+      "@app": ["app"], //directly accessing
+       "@config": ["config"], //directly accessing
+       "@middlewares/*": ["middlewares/*"], //added * on the key
+       "@models/*": ["models/*"],
+       "@common/*": ["common/*",],
+       "@exceptions/*": ["exceptions/*"],
+       "@v1/*": ["api/v1/*"],
+       "@utils/*": ["utils/*"],
+       "@services/*": ["services/*"],
+       "@__tests__/*": ["__tests__/*"]
     }
   }
 }
