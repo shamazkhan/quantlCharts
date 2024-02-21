@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 RUN yarn install
 COPY . .
 
-EXPOSE ${PORT:-3000}
+EXPOSE ${PORT:-8080}
 
 #RUN npm i --force
 #RUN npm install -g yarn
