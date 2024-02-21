@@ -1,9 +1,9 @@
 # build stage
 FROM node:16 as build-stage
 WORKDIR /app
-COPY . ./app
+COPY . .
 COPY tsconfig.json .
-
+COPY package.json .
 #RUN npm i --force
 #RUN npm install -g yarn
 
