@@ -10,10 +10,10 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "baseUrl": "src",
+    "baseUrl": "./src", // Updated base URL to include the leading dot and slash
     "paths": {
-      "@app": ["app"],
-      "@config": ["config"],
+      "@app/*": ["app/*"], // Added '*' to match all subdirectories and files
+      "@config/*": ["config/*"],
       "@middlewares/*": ["middlewares/*"],
       "@models/*": ["models/*"],
       "@common/*": ["common/*"],
