@@ -3,7 +3,12 @@ FROM node:16 as build-stage
 WORKDIR /app
 COPY . ./app
 
+COPY package.json ./
 
+RUN yarn install
+COPY . .
+
+EXPOSE ${PORT}
 
 #RUN npm i --force
 #RUN npm install -g yarn
