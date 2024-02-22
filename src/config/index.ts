@@ -1,6 +1,5 @@
 import dotenv from 'dotenv';
-//dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
-dotenv.config({ path: `.env.production.local` });
+dotenv.config({ path: `.env.${process.env.NODE_ENV || 'production'}.local` });
 
 const checkEnv = (envVar: string, defaultValue?: string) => {
   if (!process.env[envVar]) {
@@ -15,7 +14,7 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
   }
 };
 
-export const PORT: number = parseInt(process.env.PORT);
+export const PORT: number = 3000;
 export const MONGO_URI: string = checkEnv('MONGO_URI');
 export const DATABASE_GLD_SPY: string = checkEnv('DATABASE_GLD_SPY');
 export const DATABASE_XLE_TAN: string = checkEnv('DATABASE_XLE_TAN');
