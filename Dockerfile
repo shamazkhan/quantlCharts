@@ -1,7 +1,7 @@
 # build stage
 FROM node:16 as build-stage
 WORKDIR /app
-COPY . ./app
+COPY . .
 
 COPY package.json ./
 COPY tsconfig.json ./
