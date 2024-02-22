@@ -5,9 +5,8 @@ COPY . ./app
 
 COPY package.json ./
 COPY tsconfig.json ./
-
+COPY dist ./
 RUN yarn install
-COPY . .
 
 EXPOSE ${PORT}
 
