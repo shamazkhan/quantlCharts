@@ -4,6 +4,7 @@ WORKDIR /app
 COPY . ./app
 
 COPY package.json ./
+COPY tsconfig.json ./
 
 RUN yarn install
 COPY . .
