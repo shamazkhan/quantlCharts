@@ -8,6 +8,7 @@ import {
   DATABASE_GLD_SPY,
   isProduction,
   PORT,
+  HOST,
   SENTRY_DSN,
   DATABASE_TLT_SPY,
   DATABASE_SOXX,
@@ -36,6 +37,7 @@ let serverConnection: http.Server;
 export default class App {
   private readonly app: Application;
   private readonly port: string | number;
+  private readonly host: string | number;
   private readonly controllers: Function[] = [];
   public static gldSpyDb: Connection;
   public static xleTanDb: Connection;
@@ -47,6 +49,7 @@ export default class App {
   constructor(controllers: Function[]) {
     this.app = express();
     this.port = PORT || 3000;
+    this.host = HOST || "0.0.0.0";
     this.controllers = controllers;
 
     this.initSentry();
@@ -179,7 +182,7 @@ export default class App {
   public initWebServer = async () => {
     return new Promise(resolve => {
       serverConnection = this.app.listen(this.port, () => {
-        console.log(`✅  Ready on port http://localhost:${this.port}`);
+        console.log(`✅  Ready on port http://${this.host}:${this.port}`);
 
         resolve(serverConnection.address());
       });
