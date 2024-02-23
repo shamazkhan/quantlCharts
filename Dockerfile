@@ -5,7 +5,7 @@ COPY package.json ./
 COPY tsconfig.json ./
 
 RUN yarn install
-COPY . .
+COPY . ./
 
 EXPOSE ${PORT:-3000}
 
