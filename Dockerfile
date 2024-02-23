@@ -25,4 +25,4 @@ FROM build-stage as prod-build-stage
 
 ENV NODE_ENV production
 
-CMD ["yarn", "start"]
+CMD ["yarn", "start", "0.0.0.0:3000"]
