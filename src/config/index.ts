@@ -10,7 +10,7 @@ const checkEnv = (envVar: string, defaultValue?: string) => {
     }
     throw new Error(`Please define the Enviroment variable"${envVar}"`);
   } else {
-    console.log("PORT IS " + process.env[envVar])
+    console.log("PORT IS" + process.env[envVar])
     return process.env[envVar] as string;
   }
 };
