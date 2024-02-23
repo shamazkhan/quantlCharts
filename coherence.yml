@@ -1,5 +1,5 @@
 backend:
   type: backend
   local_packages: ["node_modules"]
-  dev: ["npm", "run", "dev"]
-  prod: ["npm", "run", "start"]
+  dev: ["npm", "run", "dev", "0.0.0.0:$PORT"]s
+  prod: ["npm", "run", "start", "0.0.0.0:$PORT"]
