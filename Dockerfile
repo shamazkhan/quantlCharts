@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 RUN yarn install
 COPY . ./
 
-EXPOSE ${PORT:-3000}
+EXPOSE ${PORT:-80}
 
 #RUN npm i --force
 #RUN npm install -g yarn
@@ -25,4 +25,4 @@ FROM build-stage as prod-build-stage
 
 ENV NODE_ENV production
 
-CMD ["yarn", "start", "0.0.0.0:3000"]
+CMD ["yarn", "start", "0.0.0.0:80"]
