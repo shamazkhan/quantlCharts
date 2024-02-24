@@ -48,7 +48,7 @@ export default class App {
 
   constructor(controllers: Function[]) {
     this.app = express();
-    this.port = PORT || 3000;
+    this.port = PORT || 80;
     this.host = HOST || "0.0.0.0";
     this.controllers = controllers;
 
