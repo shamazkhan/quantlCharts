@@ -3,7 +3,6 @@ services:
   server:
     build:
       context: ./
-      target: dev-build-stage
       dockerfile: Dockerfile
     container_name: server
     ports:

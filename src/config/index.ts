@@ -30,8 +30,6 @@ export const CREDENTIALS = checkEnv('CREDENTIALS') === 'true';
 export const isProduction = checkEnv('NODE_ENV') === 'production';
 export const isTest = checkEnv('NODE_ENV') === 'test';
 
-export const SENTRY_DSN = checkEnv('SENTRY_DSN');
-
 export const jwt = {
   secret: checkEnv('JWT_SECRET'),
   accessExpireIn: checkEnv('JWT_ACCESS_EXPIRE_IN'),

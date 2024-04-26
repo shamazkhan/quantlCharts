@@ -9,7 +9,6 @@ import {
   isProduction,
   PORT,
   HOST,
-  SENTRY_DSN,
   DATABASE_TLT_SPY,
   DATABASE_SOXX,
   DATABASE_CrudeWTI,
@@ -52,20 +51,12 @@ export default class App {
     this.host = HOST || "0.0.0.0";
     this.controllers = controllers;
 
-    this.initSentry();
     this.initMiddlewares();
     this.initRoutes(controllers);
 
     this.initHandlingErrors();
   }
 
-  private initSentry() {
-    if (isProduction) {
-      Sentry.init({ dsn: SENTRY_DSN });
-      // The request handler must be the first middleware on the app
-      this.app.use(Sentry.Handlers.requestHandler() as RequestHandler);
-    }
-  }
   private initMiddlewares() {
     this.app.use(helmet());
     this.app.use(cors());
